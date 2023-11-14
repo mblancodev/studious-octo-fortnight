@@ -53,5 +53,3 @@ console.log(isPalindrome("hello")); // Should return false
 - Your code should be clean, well-organized, and follow best practices.
 - Provide comments where necessary to explain your thought process.
 - Include a README.md file explaining how to run your application and any additional notes.
-
-Feel free to adjust the difficulty or add more specific requirements based on your team's needs.
