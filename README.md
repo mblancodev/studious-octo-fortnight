@@ -1,27 +1,27 @@
 # studious-octo-fortnight
 
-### Frontend Developer Home Test
+### Frontend Developer Home Test (React & React Redux)
 
-#### Task 1: Vue.js & Vuex
+#### Task 1: React & Redux
 
-Create a simple Vue.js application that fetches data from an API and displays it in a list. Use Vuex for state management.
+Create a simple React application that fetches data from an API and displays it in a list. Use React Redux for state management.
 
-1. Set up a Vue.js project.
-2. Create a Vuex store with a module to manage the application state.
-3. Fetch data from a public API (e.g., JSONPlaceholder) using Vuex actions.
+1. Set up a React project using `create-react-app`.
+2. Create a Redux store with a reducer to manage the application state.
+3. Fetch data from a public API (e.g., JSONPlaceholder) using Redux actions.
 4. Display the fetched data in a component as a list.
 
 #### Task 2: Mapbox GL
 
-Integrate Mapbox GL into your Vue.js application.
+Integrate Mapbox GL into your React application.
 
 1. Get a free Mapbox API key.
-2. Display a Mapbox map in a separate component.
+2. Display a Mapbox map in a separate React component.
 3. Add a marker to the map at a specific location.
 
 #### Task 3: Sass & CSS
 
-Use Sass to style your Vue.js components.
+Use Sass to style your React components.
 
 1. Create a reusable button component with different styles (primary, secondary, etc.).
 2. Implement responsive design for your application.
