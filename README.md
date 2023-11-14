@@ -1,8 +1,5 @@
 # studious-octo-fortnight
 
-
-Certainly! Here's a home test that covers Vue.js (Vue 2), Vuex, Mapbox GL, Sass, CSS, and includes an algorithmic task of easy to mid-level difficulty. 
-
 ### Frontend Developer Home Test
 
 #### Task 1: Vue.js & Vuex
