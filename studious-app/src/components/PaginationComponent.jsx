@@ -4,16 +4,17 @@ import Button from "./Button";
 
 const Pagination = () => {
   const dispatch = useDispatch();
+
   const totalResults = useSelector((state) => state.pag.totalResults);
-  const pages = useSelector((state) => state.pag.pages);
   const currentPage = useSelector((state) => state.pag.currentPage);
   const pageSize = useSelector((state) => state.pag.pageSize);
+  const last = useSelector((state) => state.pag.lastPage);
 
   const goToPage = (pageNumber) => {
     dispatch(setCurrentPage(pageNumber));
   };
   const nextPage = () => {
-    if (currentPage < pages) {
+    if (currentPage < last) {
       goToPage(currentPage + 1);
     }
   };
@@ -23,7 +24,7 @@ const Pagination = () => {
   };
 
   const goTolast = () => {
-    goToPage(pages); // go to lastpage
+    goToPage(last); // go to lastpage
   };
 
   const prevPage = () => {
@@ -37,14 +38,13 @@ const Pagination = () => {
     remainingPokemons <= pageSize
       ? totalResults
       : pageSize * (currentPage - 1) + pageSize;
-
   return (
     <div>
-      <div>
+      <div className="resultados">
         Total Results:{totalShownPokemons} of {totalResults}
       </div>
-      <div>
-        Pages: {currentPage} of {pages}
+      <div className="paginas">
+        Pages: {currentPage} of {last}
       </div>
       <div className="botones">
         <Button variant="primary" evento={prevPage}>

@@ -3,6 +3,7 @@ const initialState = {
   pageSize: 20,
   totalResults: 0,
   pages: 0,
+  lastPage:0
 };
 
 const Paginationreducer = (state = initialState, action) => {
@@ -13,6 +14,8 @@ const Paginationreducer = (state = initialState, action) => {
       return { ...state, pages: action.payload };
     case "SET_CURRENT_PAGE":
       return { ...state, currentPage: action.payload };
+      case "SET_LAST_PAGE":
+        return { ...state, lastPage: action.payload };
     // Otros casos para manejar acciones de paginación
     default:
       return state;

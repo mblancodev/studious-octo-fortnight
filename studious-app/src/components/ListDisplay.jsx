@@ -1,6 +1,11 @@
 import { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPokemonpag, setPages, setTotalResults } from "../redux/actions";
+import {
+  fetchPokemonpag,
+  setLastPage,
+  setPages,
+  setTotalResults,
+} from "../redux/actions";
 import Pagination from "./PaginationComponent";
 
 const ListDisplay = () => {
@@ -20,14 +25,18 @@ const ListDisplay = () => {
     if (!isLoading) {
       const total = combinedPokemonData?.data?.count;
       const pages = combinedPokemonData?.data?.results?.length;
+
+      console.log(pages);
       const last = Math.ceil(total / pages);
-      if (total && pages >= last) {
-        const pageresult = Math.ceil(total / pages); //calculo total de paginas
+      console.log(last);
+
+      if (total && currentPage + last - 1 === last) {
+        dispatch(setPages(pages));
         dispatch(setTotalResults(total));
-        dispatch(setPages(pageresult));
+        dispatch(setLastPage(last)); // Si es necesario, actualiza el estado con la última página
       }
     }
-  }, [isLoading, combinedPokemonData, dispatch]);
+  }, [isLoading, combinedPokemonData, currentPage, dispatch]);
 
   useEffect(() => {
     dispatch(fetchPokemonpag(currentPage, pageS))

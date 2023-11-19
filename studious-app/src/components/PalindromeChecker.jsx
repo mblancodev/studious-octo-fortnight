@@ -7,8 +7,10 @@ function PalindromeChecker() {
   const [isPalindrome, setIsPalindrome] = useState(false);
 
   const checkPalindrome = () => {
+    // Elimina los caracteres especiales y convierte todo a minúsculas
+  const regex = /[^a-zA-Z0-9]/g;
     // Convirtiendo en minisculas
-    const lowercaseWord = word.toLowerCase();
+    const lowercaseWord = word.toLowerCase().replace(regex, '')
 
     // voltiando la palabra y comparandola con la original
     const reversedWord = lowercaseWord.split("").reverse().join("");

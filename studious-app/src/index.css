@@ -26,3 +26,11 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
 }
+.paginas{
+  font-size: 30px;
+  color: #e7e7e7;
+}
+.resultados{
+  font-size: 30px;
+  color: #e7e7e7;
+}
