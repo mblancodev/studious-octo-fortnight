@@ -7,8 +7,9 @@ import {
   setTotalResults,
 } from "../redux/actions";
 import Pagination from "./PaginationComponent";
-
+import pokeball from "../assets/pokeball.png";
 const ListDisplay = () => {
+  
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
   const pokemonData = useSelector((state) => state.pokemon.data);
@@ -16,7 +17,6 @@ const ListDisplay = () => {
   const combinedPokemonData = useMemo(() => {
     return { ...pokemonData, ...pokemonimg };
   }, [pokemonData, pokemonimg]);
-
   const totalResults = useSelector((state) => state.pag.totalResults);
   const pageS = useSelector((state) => state.pag.pageSize);
   const currentPage = useSelector((state) => state.pag.currentPage);
@@ -26,14 +26,13 @@ const ListDisplay = () => {
       const total = combinedPokemonData?.data?.count;
       const pages = combinedPokemonData?.data?.results?.length;
 
-     
       const last = Math.ceil(total / pages);
 
       if (total && currentPage + last - 1 === last) {
         dispatch(setPages(pages));
         dispatch(setTotalResults(total));
-        
-        dispatch(setLastPage(last)); 
+
+        dispatch(setLastPage(last));
       }
     }
   }, [isLoading, combinedPokemonData, currentPage, dispatch]);
@@ -63,7 +62,7 @@ const ListDisplay = () => {
             <div className="card  mt-4">
               <img
                 className="card-img-top"
-                src={pokemon.sprites.other.home.front_default}
+                src={pokemon.sprites.other.home.front_default || pokeball}
                 alt={pokemon.name}
               />
               <div className="card-body">
