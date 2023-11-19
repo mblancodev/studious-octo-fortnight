@@ -26,14 +26,14 @@ const ListDisplay = () => {
       const total = combinedPokemonData?.data?.count;
       const pages = combinedPokemonData?.data?.results?.length;
 
-      console.log(pages);
+     
       const last = Math.ceil(total / pages);
-      console.log(last);
 
       if (total && currentPage + last - 1 === last) {
         dispatch(setPages(pages));
         dispatch(setTotalResults(total));
-        dispatch(setLastPage(last)); // Si es necesario, actualiza el estado con la última página
+        
+        dispatch(setLastPage(last)); 
       }
     }
   }, [isLoading, combinedPokemonData, currentPage, dispatch]);
