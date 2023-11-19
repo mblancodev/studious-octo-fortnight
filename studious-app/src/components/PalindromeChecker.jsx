@@ -1,28 +1,27 @@
-import  { useState,useEffect } from 'react';
-import Button from './Button';
-import './PalindromeCheker.scss';
+import { useState, useEffect } from "react";
+import Button from "./Button";
+import "./PalindromeCheker.scss";
 
 function PalindromeChecker() {
-  const [word, setWord] = useState('');
+  const [word, setWord] = useState("");
   const [isPalindrome, setIsPalindrome] = useState(false);
 
-
   const checkPalindrome = () => {
-    // Convirtiendo en minisculas   
+    // Convirtiendo en minisculas
     const lowercaseWord = word.toLowerCase();
 
     // voltiando la palabra y comparandola con la original
-    const reversedWord = lowercaseWord.split('').reverse().join('');
+    const reversedWord = lowercaseWord.split("").reverse().join("");
 
     // revisar si la palabra reversa es igual a la orginal
     setIsPalindrome(lowercaseWord === reversedWord);
   };
 
-  const isInputEmpty = word.trim() === ''; // Verifica si el campo de entrada está vacío o contiene solo espacios
+  const isInputEmpty = word.trim() === ""; // Verifica si el campo de entrada está vacío o contiene solo espacios
 
   useEffect(() => {
     // Reiniciar el estado de isPalindrome a false cuando el input se vacíe
-    if (word.trim() === '') {
+    if (word.trim() === "") {
       setIsPalindrome(false);
     }
   }, [word]);
@@ -44,15 +43,13 @@ function PalindromeChecker() {
           Check Palindromo
         </Button>
       )}
-   
-      {!isInputEmpty && (
-        isPalindrome ? (
+
+      {!isInputEmpty &&
+        (isPalindrome ? (
           <p>La palabra es palindroma!</p>
         ) : (
           <p>La palabra no es palindroma</p>
-        )
-      )}
-
+        ))}
     </div>
   );
 }
