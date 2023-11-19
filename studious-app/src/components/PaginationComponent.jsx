@@ -56,9 +56,13 @@ const goToPage = (pageNumber) => {
     <div>
       <div>Total Results:{totalPokemonCount} of {totalResults}</div>
       <div>Pages: {currentPage} of {pages}</div>
-      <Button variant="primary" evento={prevPage}>Prev</Button>
+      <div className='botones' >
+        <Button variant="primary" evento={prevPage}>Prev</Button>
+        <Button variant="primary" evento={resetToPageOne}>Reset to Page 1</Button>
       <Button variant="secondary" evento={nextPage}>Next</Button>
-      <Button variant="primary" evento={resetToPageOne}>Reset to Page 1</Button>
+        
+      </div>
+
     </div>
   );
 };

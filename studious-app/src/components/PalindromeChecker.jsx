@@ -1,5 +1,6 @@
 import  { useState,useEffect } from 'react';
 import Button from './Button';
+import './PalindromeCheker.scss';
 
 function PalindromeChecker() {
   const [word, setWord] = useState('');

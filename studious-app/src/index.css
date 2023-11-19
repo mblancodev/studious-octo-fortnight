@@ -16,5 +16,14 @@ body{
 
 }
 h1{
-  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 50px;
+  color: #e7e7e7;
+}
+.botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
