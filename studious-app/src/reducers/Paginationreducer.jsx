@@ -1,7 +1,8 @@
 const initialState = {
-    totalResults: 0,
-    pages: 0,
-    currentPage: 1,
+  currentPage: 1,
+  pageSize: 20,
+  totalResults: 0,
+  pages: 0,
   };
   
   const Paginationreducer = (state = initialState, action) => {

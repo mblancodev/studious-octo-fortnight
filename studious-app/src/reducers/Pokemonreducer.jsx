@@ -1,6 +1,7 @@
 const initialState = {
     data:[],
     isLoading:false,
+    lista:[],
     error:null
   };
   
