@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import Pokemonreducer from "./pokemonreducer";
+import Pokemonreducer from "./Pokemonreducer";
 import Mapreducer from "./Mapreducer";
 import Paginationreducer from "./Paginationreducer";
 
